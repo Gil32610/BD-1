@@ -18,6 +18,10 @@ public class Livro implements Serializable {
         this.anoPublicacao = anoPublicacao;
     }
 
+    public Livro(int codigo){
+        this.codigo = codigo;
+    }
+
     public String getTitulo() {
         return titulo;
     }
