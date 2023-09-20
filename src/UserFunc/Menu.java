@@ -13,4 +13,6 @@ public class Menu {
         System.out.println("0 - Encerrar");
         System.out.println("-".repeat(20));
     }
+
+    
 }
