@@ -1,6 +1,7 @@
 package UserFunc;
 
 public class Menu {
+
     public static void menuList() {
         System.out.println("-".repeat(20));
         System.out.println("Informe a opção desejada:");
@@ -13,5 +14,5 @@ public class Menu {
         System.out.println("-".repeat(20));
     }
 
-    
+
 }
