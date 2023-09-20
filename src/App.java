@@ -1,13 +1,17 @@
 import java.io.File;
+import java.nio.file.Files;
 
 import UserFunc.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Menu.menuList();
-        System.out.println("Current Working Directory = " + new File("").getAbsolutePath());
-        String filename = "files/data_set_library.csv";
+        String filename = "files/data_set_library.dat";
         File file = new File(filename);
+        if(file.createNewFile()){
+            System.out.println("Binary file created");
+        }
         System.out.printf("%s",file.exists()?"It's here": "Was not created");
+        
         
     }
 }
