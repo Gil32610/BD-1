@@ -10,8 +10,6 @@ public class App {
         if(file.createNewFile()){
             System.out.println("Binary file created");
         }
-        System.out.printf("%s",file.exists()?"It's here": "Was not created");
-        
-        
+        System.out.printf("%s",file.exists()?"It's here": "Was not created"); 
     }
 }
