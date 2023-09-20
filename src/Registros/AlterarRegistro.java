@@ -27,6 +27,7 @@ public class AlterarRegistro {
         System.out.println("Informe a opção desejada:");
         do {
             fieldsOptions();
+            op = Integer.parseInt(s.nextLine());
             switch (op) {
                 case 1:
                     System.out.println("Código atual: " + l.getCodigo());
@@ -35,19 +36,34 @@ public class AlterarRegistro {
                     l.setCodigo(codigo);
                     System.out.println("Código alterado!");
                     break;
-                    case 2:
+                case 2:
                     System.out.println("Título Atual: " + l.getTitulo());
                     System.out.print("Novo Título: ");
                     String titulo = s.nextLine();
                     l.setTitulo(titulo);
                     System.out.println("\nTítulo alterado!");
                     break;
-                    case 3:
+                case 3:
                     System.out.println("Autor Atual: " +l.getAutor());
-                    System.out.print("Autor atual: ");
+                    System.out.print("Novo Autor: ");
                     String autor = s.nextLine();
                     l.setAutor(autor);
                     System.out.println("\nAutor alterado!");
+                    break;
+                case 4:
+                    System.out.println("Quantidade Atual: "+l.getQuantidade());
+                    System.out.print("Nova Quantidade: ");
+                    int quantidade = Integer.parseInt(s.nextLine());
+                    l.setQuantidade(quantidade);
+                    System.out.println("\nQuantidade alterada!");
+                    break;
+                case 5:
+                    System.out.println("Ano de Publicação Atual: "+l.getAnoPublicacao());
+                    System.out.print("Nova Ano de Publicação: ");
+                    int anoPublicacao = Integer.parseInt(s.nextLine());
+                    l.setAnoPublicacao(anoPublicacao);
+                    System.out.println("\nAno da Publicação alterado!");
+                    break;    
                 default:
                     System.out.println("Não é uma opção!");
                     break;
