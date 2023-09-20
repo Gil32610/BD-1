@@ -1,8 +1,12 @@
 package Registros;
 
 public class RemoverRegistro {
-    public static ArrayList<Object> removeRegistro(ArrayList<Object> array, File file){
+    private static ArrayList<Object> removeReg(ArrayList<Object> array, File file){
         
 
+    }
+
+    public static void delete(File file,int codigo){
+        
     }
 }
