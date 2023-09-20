@@ -1,4 +1,4 @@
-package UserFunc;
+package Biblioteca;
 
 public class CriarRegistro {
     
