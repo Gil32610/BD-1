@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListarRegistros {
-    static ArrayList<Object> registros;
 
-    public static void listar(File file){
-        registros = new ArrayList<Object>();
+    public static ArrayList<Object> ler(File file){
+        ArrayList<Object> registros = new ArrayList<Object>();
         boolean cont = true;
+        FileInputStream fis;
+        ObjectInputStream ois;
         try {
-            FileInputStream fis = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fis);
+            fis = new FileInputStream(file);
+             ois = new ObjectInputStream(fis);
             while(cont){
                 Object obj = ois.readObject();
                 if(obj!=null){
@@ -26,10 +27,19 @@ public class ListarRegistros {
                     ois.close();
                 }
             }
+            
         } catch (Exception e) {
         
-          
         }
+        finally{
+            
+        }
+        return registros;
+    }
 
+    public static void listarLivros(ArrayList<Object> registros){
+        for (int i = 0; i < registros.size(); i++) {
+            System.out.println(registros.get(i));
+        }
     }
 }

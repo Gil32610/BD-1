@@ -2,8 +2,8 @@ package Biblioteca.Livro;
 
 import java.io.Serializable;
 
-public class Livro implements Serializable{
-    
+public class Livro implements Serializable {
+
     String titulo;
     String autor;
     int codigo;
@@ -62,6 +62,15 @@ public class Livro implements Serializable{
     public String toString() {
         return "Livro [livro=" + titulo + ", codigo=" + codigo + ", autor=" + autor + ", quantidade=" + quantidade
                 + ", anoPublicacao=" + anoPublicacao + "]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Livro) {
+            Livro l = (Livro) obj;
+            return this.codigo == l.codigo ? true : false;
+        }
+        return false;
     }
 
 }

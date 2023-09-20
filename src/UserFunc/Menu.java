@@ -1,5 +1,10 @@
 package UserFunc;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
+import Registros.CriarRegistro;
+import Registros.ListarRegistros;
 public class Menu {
 
     public static void menuList() {
@@ -12,6 +17,19 @@ public class Menu {
         System.out.println("5 - Consultar Registros");
         System.out.println("0 - Encerrar");
         System.out.println("-".repeat(20));
+    }
+
+    public static void options(int op, File file, ArrayList<Object> array){
+        switch(op){
+            case 1:
+            CriarRegistro.inserirLivro(file,array);
+            break;
+            case 2:
+            ArrayList<Object> registros = ListarRegistros.ler(file);
+            ListarRegistros.listarLivros(registros);
+            break;
+
+        }
     }
 
     
