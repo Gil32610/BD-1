@@ -1,6 +1,7 @@
 import java.io.File;
 import java.nio.file.Files;
 
+import Registros.CriarRegistro;
 import UserFunc.*;
 
 public class App {
@@ -12,5 +13,6 @@ public class App {
             System.out.println("Binary file created");
         }
         System.out.printf("%s",file.exists()?"It's here": "Was not created"); 
+        CriarRegistro.inserirLivro(file);
     }
 }

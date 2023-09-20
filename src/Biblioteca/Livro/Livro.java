@@ -1,6 +1,8 @@
-package UserFunc;
+package Biblioteca.Livro;
 
-public class Livro {
+import java.io.Serializable;
+
+public class Livro implements Serializable{
     
     String titulo;
     String autor;

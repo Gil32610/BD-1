@@ -1,8 +1,10 @@
-package UserFunc;
+package Biblioteca;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import Biblioteca.Livro.Livro;
 
 public class Registro {
     
