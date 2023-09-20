@@ -1,12 +1,14 @@
 package UserFunc;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
+import Registros.RemoverRegistro;
 import Biblioteca.Livro.Livro;
 import Registros.ProcurarRegistro;
 import Registros.CriarRegistro;
 import Registros.ListarRegistros;
+
 public class Menu {
 
     public static void menuList() {
@@ -21,26 +23,27 @@ public class Menu {
         System.out.println("-".repeat(20));
     }
 
-    public static void options(int op, File file, ArrayList<Object> array){
-        switch(op){
+    public static void options(int op, File file, ArrayList<Object> array) {
+        switch (op) {
             case 1:
-            CriarRegistro.inserirLivro(file,array);
-            break;
+                CriarRegistro.inserirLivro(file, array);
+                break;
             case 2:
-            ArrayList<Object> registros = ListarRegistros.ler(file);
-            ListarRegistros.listarLivros(registros);
-            break;
+                ArrayList<Object> registros = ListarRegistros.ler(file);
+                ListarRegistros.listarLivros(registros);
+                break;
             case 3:
-            break;
+            
+                break;
             case 4:
-            break;
+                RemoverRegistro.delete(file, array);
+                break;
             case 5:
-            Livro l = ProcurarRegistro.checkReg(file);
-            if(l!=null)
-            System.out.println(l);
-            break;
+                Livro l = ProcurarRegistro.checkReg(file);
+                if (l != null)
+                    System.out.println(l);
+                break;
         }
     }
 
-    
 }
