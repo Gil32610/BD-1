@@ -6,7 +6,9 @@ import java.util.List;
 import Registros.RemoverRegistro;
 import Biblioteca.Livro.Livro;
 import Registros.ProcurarRegistro;
+import Registros.AlterarRegistro;
 import Registros.CriarRegistro;
+import Registros.EmprestimoLivros;
 import Registros.ListarRegistros;
 
 public class Menu {
@@ -19,6 +21,7 @@ public class Menu {
         System.out.println("3 - Alterar registro");
         System.out.println("4 - Remover Registro");
         System.out.println("5 - Consultar Registro");
+        System.out.println("6 - Emprestimo de Livros");
         System.out.println("0 - Encerrar");
         System.out.println("-".repeat(20));
     }
@@ -33,7 +36,7 @@ public class Menu {
                 ListarRegistros.listarLivros(registros);
                 break;
             case 3:
-            
+                AlterarRegistro.changeRegister(file, array);
                 break;
             case 4:
                 RemoverRegistro.delete(file, array);
@@ -42,6 +45,9 @@ public class Menu {
                 Livro l = ProcurarRegistro.checkReg(file);
                 if (l != null)
                     System.out.println(l);
+                break;
+            case 6:
+                EmprestimoLivros.emprestimos(file, array);
                 break;
         }
     }

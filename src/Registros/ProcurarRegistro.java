@@ -1,4 +1,6 @@
 package Registros;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.EOFException;
 import java.io.File;
@@ -30,7 +32,7 @@ public class ProcurarRegistro {
 
                 }
             }
-            
+
         } finally {
             if (is != null) {
                 is.close();
@@ -40,16 +42,27 @@ public class ProcurarRegistro {
 
     }
 
-    public static Livro checkReg(File file){
+    public static Livro checkReg(File file) {
         Scanner s = new Scanner(System.in);
-        int codigo =0;
+        int codigo = 0;
         System.out.println("Informe o código do livro:");
         codigo = Integer.parseInt(s.nextLine());
-        try{
+        try {
             return findRegistro(file, codigo);
-        }catch(IOException ex){
+        } catch (IOException ex) {
             return null;
         }
+    }
 
+    public static Livro getLivro(ArrayList<Object> array) {
+        Scanner s = new Scanner(System.in);
+        int codigo = 0;
+        System.out.println("Informe o código do livro:");
+        codigo = Integer.parseInt(s.nextLine());
+        Livro l = new Livro(codigo);
+        if (array.contains(l)) {
+            return(Livro) array.get(array.indexOf(l));
+        } else
+            return null;
     }
 }
