@@ -9,7 +9,7 @@ import Registros.*;
 
 public class AlterarRegistro {
     public static void changeRegister(File file, ArrayList<Object> array) {
-        Livro l = ProcurarRegistro.checkReg(file);
+        Livro l = ProcurarRegistro.getLivro(array);
         if (l != null) {
             changeFields(l);
             try {
@@ -64,6 +64,9 @@ public class AlterarRegistro {
                     l.setAnoPublicacao(anoPublicacao);
                     System.out.println("\nAno da Publicação alterado!");
                     break;    
+                    case 0:
+                    System.out.println("Retornando!");
+                    break;
                 default:
                     System.out.println("Não é uma opção!");
                     break;

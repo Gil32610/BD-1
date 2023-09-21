@@ -8,9 +8,9 @@ import java.util.Scanner;
 import Biblioteca.Livro.Livro;
 
 public class EmprestimoLivros {
-    
+
     public static void emprestimos(File file, ArrayList<Object> array) {
-        Livro l = ProcurarRegistro.checkReg(file);
+        Livro l = ProcurarRegistro.getLivro(array);
         if (l != null) {
             emprestimoLivros(l);
             try {
@@ -36,15 +36,21 @@ public class EmprestimoLivros {
                 case 2:
                     System.out.println("Quantos exemplares você deseja emprestar: ");
                     int quantidadeE = Integer.parseInt(s.nextLine());
-                    l.setQuantidade(l.getQuantidade()-quantidadeE);
-                    System.out.println("\nExemplares Emprestados!");
+                    if (quantidadeE <= l.getQuantidade()) {
+                        l.setQuantidade(l.getQuantidade() - quantidadeE);
+                        System.out.println("\nExemplares Emprestados!");
+                    } else
+                        System.out.println("Quantidade excede os livros disponíveis");
                     break;
                 case 3:
                     System.out.println("Quantos exemplares você deseja desvolver: ");
                     int quantidadeD = Integer.parseInt(s.nextLine());
-                    l.setQuantidade(l.getQuantidade()+quantidadeD);
+                    l.setQuantidade(l.getQuantidade() + quantidadeD);
                     System.out.println("\nExemplares Devolvidos!");
-                    break;   
+                    break;
+                case 0:
+                    System.out.println("Retornando....");
+                    break;
                 default:
                     System.out.println("Não é uma opção!");
                     break;
